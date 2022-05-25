@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 14:16:56 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/25 17:53:25 by kcheong          ###   ########.fr       */
+/*   Created: 2022/05/25 17:07:36 by kcheong           #+#    #+#             */
+/*   Updated: 2022/05/25 17:53:34 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdlib.h>
-//#include <strings.h>
-//#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	void	*temp;
+	size_t	i;
 
-	temp = malloc(size * count);
-	ft_bzero(temp, count);
-	//bzero(temp, count);
-	return (temp);	
+	i = 0;
+	while (src[i] && i < )
+
+
 }
 
-/* 
-int	main()
+int main () 
 {
-	printf("%s", ft_calloc(5, 4));
-	printf("%s", calloc(5, 4));
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   memmove(dest, src, 4);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+   return(0);
 }
-*/
