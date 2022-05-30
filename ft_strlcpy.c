@@ -6,11 +6,12 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 16:08:06 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/25 17:33:10 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:31:26 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -19,17 +20,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	
 	i = 0;
 	srclen = ft_strlen((char *) src);
-	while (src[i] && i < dstsize - 1)
+	if (dstsize > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (srclen);
 }
 
-
-int	main()
+/*int	main()
 {
 	const char	src[] = "Hello I am Koen.";
 	char	dst[1000];
@@ -48,4 +51,4 @@ int	main()
 	printf("Return %3i. %s\n", r, dst);
 	r = ft_strlcpy(dst, src, 20);
 	printf("Return %3i. %s\n", r, dst);
-}
+}*/
