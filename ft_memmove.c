@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:07:36 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/30 13:07:34 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/05/31 00:32:12 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
    if (!s && !d)
       return (0);
    if (s < d)
-      while (n < n - 1)
+      while (n < (n - 1))
       {
          d[n] = s[n];
          n--;

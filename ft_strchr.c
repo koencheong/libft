@@ -17,8 +17,8 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 	
 	i = 0;
-	if (!s)
-		return (NULL);
+	// if (!s)
+	// 	return (NULL);
 	// if (c == '\0')
 	// 	return (NULL);
 	while (s[i])
@@ -27,20 +27,20 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s + i);
 		i++;
 	}
-	// if (s[i] == c)
-	// 	return ((char *)s + i);
+	if (s[i] == c)
+		return ((char *)s + i);
 	return (NULL);
 }
 
-int	main()
-{
-	const char s[] = ", Hello, I am Koen.";
-	int	c = '\0';
-	char *res1;
-	char *res2;
+// int	main()
+// {
+// 	const char s[] = ", Hello, I am Koen.";
+// 	int	c = '\0';
+// 	char *res1;
+// 	char *res2;
 
-	res1 = strchr(s, c);
-	printf("String after [%c] is [%s]\n", c, res1);
-	res2 = ft_strchr(s, c);
-	printf("String after [%c] is [%s]\n", c, res1);
-}
+// 	res1 = strchr(s, c);
+// 	printf("String after [%c] is [%s]\n", c, res1);
+// 	res2 = ft_strchr(s, c);
+// 	printf("String after [%c] is [%s]\n", c, res1);
+// }
