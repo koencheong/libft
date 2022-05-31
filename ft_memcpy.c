@@ -18,6 +18,8 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
+	if ((dest == src) || n == 0)
+		return (dest);
 	while (i < n)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
@@ -26,16 +28,18 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-
+/*
 int	main()
 {
-	char dest[50] = "Hello";
+	char dest[50] = "";
 	const char src[50] = "Byebye";
 	/*strcpy(dest,"Heloooo!!");
 	printf("%s\n", dest);
 	memcpy(dest, src, strlen(src)+1);
-	printf("%s\n", dest);*/
+	printf("%s\n", dest);
 	printf("%s\n", dest);
 	ft_memcpy(dest, src, strlen(src)+1);
 	printf("%s\n", dest);
-}
+	memcpy(dest, src, strlen(src)+1);
+	printf("%s\n", dest);
+}*/
