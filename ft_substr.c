@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 13:51:31 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/31 15:02:29 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/02 21:30:55 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	j;
 	char	*dest;
+	size_t	slen;
 
-	dest = (char *)malloc(sizeof(char) * (len + 1));
-	i = 0;
 	j = 0;
+	slen = ft_strlen (s);
+	if (len > slen)
+		len = slen;
+	dest = ft_calloc(sizeof(char), (len + 1));
 	if (!dest)
 		return (NULL);
-	while (s[i])
+	if (start > slen)
+		return (dest);
+	while (s[start] && j < len)
 	{
-		if (i >= start && j <= len)
-		{
-			dest[j] = s[i];
-			j++;
-		}
-		i++;
+		dest[j] = s[start];
+		j++;
+		start++;
 	}
-	dest[i] = '\0';
+	dest[j] = '\0';
 	return (dest);
 }
 
