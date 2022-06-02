@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:07:36 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/31 13:35:28 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/02 16:35:29 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char  *s;
+   char  *s;
    char  *d;
 
    s = (char *)src;
@@ -22,11 +22,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
    if (!s && !d)
       return (0);
    if (s < d)
+   {
       while (n <= (n - 1))
       {
          d[n] = s[n];
          n--;
       }
+   }
    else
       ft_memcpy(d, s, n);
    return (dest);
