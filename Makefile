@@ -32,7 +32,7 @@ CC = gcc
 
 CFLAGS	= -Wall -Werror -Wextra
 
-$(NAME) : ${OBJS}
+$(NAME) : ${OBJS}·
 		@echo "Making library..."
 		@ar rcs ${NAME} ${OBJS}
 

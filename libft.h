@@ -6,7 +6,11 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:10:20 by kcheong           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/06/02 16:07:17 by kcheong          ###   ########.fr       */
+=======
+/*   Updated: 2022/06/02 02:10:19 by kcheong          ###   ########.fr       */
+>>>>>>> ab34e4946797288fc7c6c19447f418e515443313
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +78,10 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-void	ft_putstr_fd(char *s, int fd);
+//part 2
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif
