@@ -5,23 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 17:54:07 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/27 17:25:17 by kcheong          ###   ########.fr       */
+/*   Created: 2022/05/30 13:35:49 by kcheong           #+#    #+#             */
+/*   Updated: 2022/05/30 13:35:49 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	srclen;
 	size_t	dstlen;
+	size_t	srclen;
 
-	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
 	i = 0;
-	if (dstsize == 0)
-		return (srclen)
-	
+	if (size == 0)
+		return (srclen);
+	if (size <= dstlen)
+		dstlen = size;
+	while ((src[i]) && ((dstlen + i) < size - 1))
+	{
+		dst[dstlen + i] = src[i];
+		i++;
+	}
+	dst[dstlen + i] = '\0';
+	return (dstlen + srclen);
 }
+
+/*int	main()
+{
+	char src[] = ", see you tmr";
+	char dst[] = "Byebye";
+	strncat(dst, src, 14);
+	printf("%s\n", dst);
+	ft_strlcat(dst, src, 14);
+	printf("%s\n", dst);
+}*/
+

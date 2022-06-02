@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 14:43:27 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/30 15:43:02 by kcheong          ###   ########.fr       */
+/*   Created: 2022/05/31 15:19:06 by kcheong           #+#    #+#             */
+/*   Updated: 2022/05/31 15:42:38 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	s1len;
+	size_t	s2len;
 	size_t	i;
+	char   *new;
 
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	new = malloc(s1len + s2len + 1);
+	if (!new)
+		return (NULL);
 	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	while (*s1)
+		new[i++] = *s1++;
+	while (*s2)
+		new[i++] = *s2++;
+	new[i] = '\0';
+	return (new);
 }
 
 // int	main()
 // {
-// 	const char s[] = "Hello";
-// 	printf("%li\n", ft_strlen(s));
+// 	char const s1[] = "Hello";
+// 	char const s2[] = "I am Koen";
+// 	printf("%s\n", ft_strjoin(s1, s2));
 // }
