@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:41:07 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/02 16:42:49 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:45:05 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		write (fd, s++, 1);
+if (!s)
+	return;
+while (*s)
+	write (fd, s++, 1);
 }

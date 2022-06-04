@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:19:06 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/31 15:42:38 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:33:50 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	char   *new;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	new = malloc(s1len + s2len + 1);

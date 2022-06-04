@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 
-	if (!s1 && !set)
+	if (!s1 || !set)
 		return (0);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main()
 // {
-// 	char const s1[] = "aabbccHelloaWorldaabbcc";
-// 	char const set[] = "abc";
+// 	char const s1[] = "abcdefghi";
+// 	char const set[] = "def";
 // 	printf("%s\n", ft_strtrim(s1, set));
 // }

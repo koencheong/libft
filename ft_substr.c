@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 13:51:31 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/02 21:30:55 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/03 13:30:47 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 
 	j = 0;
-	slen = ft_strlen (s);
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
 	if (len > slen)
 		len = slen;
 	dest = ft_calloc(sizeof(char), (len + 1));

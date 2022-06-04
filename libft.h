@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:10:20 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/02 21:35:19 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/03 21:12:27 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

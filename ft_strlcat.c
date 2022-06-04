@@ -23,8 +23,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (srclen);
-	if ((size - 1) < dstlen)
-		dstlen = size - 1;
+	if (size < dstlen + 1)
+		return (srclen + size);
 	while ((src[i]) && ((dstlen + i) < size - 1))
 	{
 		dst[dstlen + i] = src[i];
@@ -34,13 +34,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (dstlen + srclen);
 }
 
-/*int	main()
-{
-	char src[] = ", see you tmr";
-	char dst[] = "Byebye";
-	strncat(dst, src, 14);
-	printf("%s\n", dst);
-	ft_strlcat(dst, src, 14);
-	printf("%s\n", dst);
-}*/
+// int	main()
+// {
+// 	char src[] = ", see you tmr";
+// 	char dst[] = "Byebye";
+// 	ft_strlcat(dst, src, 14);
+// 	printf("%s\n", dst);
+// }
 

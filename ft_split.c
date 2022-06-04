@@ -46,7 +46,7 @@ size_t	word_len(char const *s, char c, size_t i)
 	return (wordlen);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	size_t	i;
@@ -55,6 +55,8 @@ char **ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	w = word_count(s, c);
 	array = ft_calloc(sizeof(char *) , (w + 1));
 	if (!array)
@@ -73,6 +75,7 @@ char **ft_split(char const *s, char c)
 	array[j] = 0;
 	return (array);
 }
+
 
 // int main()
 // {
