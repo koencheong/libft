@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:19:06 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/03 13:33:50 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/04 21:49:56 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s1len;
 	size_t	s2len;
 	size_t	i;
-	char   *new;
+	char	*new;
 
 	if (!s1 || !s2)
 		return (NULL);

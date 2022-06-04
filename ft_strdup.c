@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:03:53 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/31 15:18:49 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/04 21:50:37 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *temp;
+	char	*temp;
 	size_t	i;
 	size_t	s1len;
 

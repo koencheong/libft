@@ -6,30 +6,26 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:23:14 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/03 19:38:47 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/04 15:14:51 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
-		
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-	}
-	while (n > 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n %= 10, fd);
-	}
-	ft_putchar_fd(n + 48, fd);
+	char	*temp;
+
+	temp = ft_itoa(n);
+	if (!temp)
+		return ;
+	ft_putstr_fd(temp, fd);
+	free(temp);
 }
+
+// int main()
+// {
+// 	ft_putnbr_fd(123, 1);
+// 	system("leaks putnbr_test.out");
+// 	return (0);
+// }

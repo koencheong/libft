@@ -58,16 +58,15 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	w = word_count(s, c);
-	array = ft_calloc(sizeof(char *) , (w + 1));
+	array = ft_calloc(sizeof(char *), (w + 1));
 	if (!array)
 		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
 		{
-			array[j] = ft_substr(s, i, word_len(s, c, i));
+			array[j++] = ft_substr(s, i, word_len(s, c, i));
 			i += word_len(s, c, i);
-			j++;
 		}
 		else
 			i++;
@@ -75,7 +74,6 @@ char	**ft_split(char const *s, char c)
 	array[j] = 0;
 	return (array);
 }
-
 
 // int main()
 // {

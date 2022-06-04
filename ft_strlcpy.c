@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 16:08:06 by kcheong           #+#    #+#             */
-/*   Updated: 2022/05/31 13:32:37 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/04 21:49:31 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	srclen;
-	
+
 	i = 0;
 	srclen = ft_strlen((char *) src);
 	if (dstsize > 0)

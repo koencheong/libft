@@ -6,7 +6,7 @@
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:10:20 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/03 21:12:27 by kcheong          ###   ########.fr       */
+/*   Updated: 2022/06/04 18:15:01 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@
 # include <unistd.h>
 # include <stdio.h> 
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 //part 1
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -76,14 +82,22 @@ int		ft_tolower(int c);
 
 //part 2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char *ft_strjoin(char const *s1, char const *s2);
-char *ft_strtrim(char const *s1, char const *set);
-char **ft_split(char const *s, char c);
-void ft_putchar_fd(char c, int fd);
-void ft_putstr_fd(char *s, int fd);
-void ft_putendl_fd(char *s, int fd);
-void ft_putnbr_fd(int n, int fd);
-void ft_striteri(char *s, void (*f)(unsigned int, char*));
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_itoa(int n);
+
+//bonus
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
