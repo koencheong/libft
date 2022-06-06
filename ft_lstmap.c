@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcheong <kcheong@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:23:14 by kcheong           #+#    #+#             */
-/*   Updated: 2022/06/06 14:47:16 by kcheong          ###   ########.fr       */
+/*   Created: 2022/06/06 14:09:57 by kcheong           #+#    #+#             */
+/*   Updated: 2022/06/06 17:45:23 by kcheong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		if (n == -2147483648)
-		{
-			ft_putchar_fd('2', fd);
-			n = -147483648;
-		}
-		n = -n;
-	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10) + '0', fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
-}
+	t_list	*new;
+	t_list	*temp;
 
-// int main()
-// {
-// 	ft_putnbr_fd(123, 1);
-// 	system("leaks putnbr_test.out");
-// 	return (0);
-// }
+	if (!lst || !f)
+		return (NULL);
+	new = ft_lstnew(f(lst->content));
+	if (!new)
+		return (NULL);
+	temp = new;
+	lst = lst->next;
+	while (lst)
+	{
+		new->next = ft_lstnew(f(lst->content));
+		if (new->content == NULL)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		new = new->next;
+		lst = lst->next;
+	}
+	return (temp);
+}
